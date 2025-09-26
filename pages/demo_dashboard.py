@@ -1,4 +1,9 @@
-# Streamlit — Hitter Hot/Cold & Pitch Location (team dropdown, FG fallback, single-player load)
+
+import warnings, datetime as dt
+warnings.filterwarnings("ignore")
+# Unified "Calls & Outcomes" filter, fast UI, violin KDE, true-scale toggle
+# Caching: Uses both Streamlit @st.cache_data and pybaseball.cache for optimal performance
+# ---------------------------------------------------------------------------------------------
 # Unified “Calls & Outcomes” filter, fast UI, violin KDE, true-scale toggle
 # ---------------------------------------------------------------------------------------------
 import warnings, datetime as dt
@@ -18,7 +23,11 @@ from pybaseball import (
     batting_stats,          # FanGraphs team board (primary roster source)
     playerid_reverse_lookup,
     chadwick_register,      # cross IDs (mlbam, fangraphs, bref, retro)
+    cache,                  # pybaseball caching system
 )
+
+# Enable pybaseball caching for faster data retrieval
+cache.enable()
 
 # -------- Page ----------
 st.set_page_config(page_title="Batter Analytics Dashboard", layout="wide", page_icon="📈")
