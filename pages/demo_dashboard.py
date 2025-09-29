@@ -123,6 +123,8 @@ st.markdown("---")
 st.title("Select Team ➜ Player")
 st.caption("Pick a team and hitter to explore 14-zone hot/cold performance, pitch locations, and contact quality. "
            "Each plot has its own date range control. Filters below the plate apply to both Pitch Location and Contact Quality.")
+# add some bold text
+st.markdown("**Note:** This dashboard uses automatically updated data. It may take a few moments to load if it has been inactive for a while.")
 
 # -------- Constants -----
 IN_ZONES = list(range(1,10))
